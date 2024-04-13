@@ -1,0 +1,37 @@
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  height: 50vh;
+}
+
+.custom-button {
+  border-radius: 20px;
+  box-shadow: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+ion-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+ion-content {
+  --background: #ececec00; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-clip: content-box;
+  color: #33333300; 
+}
+#my-logo {
+  width: 50px; /* Tamaño más pequeño */
+  height: 50px; /* Tamaño más pequeño */
+  border-radius: 50%; /* Esto hará que la imagen tenga forma de círculo */
+  overflow: hidden; /* Esto ocultará cualquier contenido que se desborde de la forma del círculo */
+}

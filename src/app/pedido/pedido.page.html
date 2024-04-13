@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>pedido</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">pedido</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <img src="assets/completo.png" alt="Completo Italiano" />
+    <ion-card-header>
+      Completo Italiano
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Completo Italiano</ion-label>
+          <ion-button slot="end" (click)="removeItem('completo')">-</ion-button>
+          <ion-note slot="end">{{ precioCompleto | currency }}</ion-note>
+          <ion-button slot="end" (click)="addItem('completo')">+</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-label>Papas Fritas</ion-label>
+          <ion-button slot="end" (click)="removeItem('papas')">-</ion-button>
+          <ion-note slot="end">{{ precioPapas | currency }}</ion-note>
+          <ion-button slot="end" (click)="addItem('papas')">+</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-label>Bebida</ion-label>
+          <ion-button slot="end" (click)="removeItem('bebida')">-</ion-button>
+          <ion-note slot="end">{{ precioBebida | currency }}</ion-note>
+          <ion-button slot="end" (click)="addItem('bebida')">+</ion-button>
+        </ion-item>
+        <!-- Puedes agregar más elementos según sea necesario -->
+      </ion-list>
+    </ion-card-content>
+    
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-button expand="block" color="primary">Realizar pedido</ion-button>
+    </ion-row>
+  </ion-card>
+</ion-content>

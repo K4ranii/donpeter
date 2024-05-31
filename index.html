@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html class="desktop mbr-site-loaded"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="./assets/photo-1531097023973-44a8761c85e1.jpeg" type="image/x-icon">
+  <meta name="description" content="Somos DonPeter, el mejor lugar para disfrutar completos chilenos. Realiza tus pedidos y evita las filas y tiempos de espera.">
+  
+  
+  <title>DonPeter</title>
+  <link rel="stylesheet" href="./assets/donpeter2.css">
+  <link rel="stylesheet" href="./assets/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="./assets/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="stylesheet" href="./assets/style(1).css">
+  <link rel="stylesheet" href="./assets/css2" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap"></noscript>
+  <link rel="preload" as="style" href="./assets/mbr-additional.css"><link rel="stylesheet" href="./assets/mbr-additional.css" type="text/css">
+
+  
+  
+  
+
+<style>
+.navbar-fixed-top {
+  top: auto;
+}
+#donpeterBanner.container-banner {
+  height: 8rem;
+  opacity: 1;
+  -webkit-animation: 4s linear animationHeight;
+  -moz-animation: 4s linear animationHeight;
+    -o-animation: 4s linear animationHeight;
+       animation: 4s linear animationHeight;
+       transition: all  0.5s;
+}
+#donpeterBanner.container-banner.container-banner-closing {
+  pointer-events: none;
+  height: 0;
+  opacity: 0;
+  -webkit-animation: 0.5s linear animationClosing;
+  -moz-animation:  0.5s linear animationClosing;
+    -o-animation:  0.5s linear animationClosing;
+       animation:  0.5s linear animationClosing;
+}
+#donpeterBanner .banner {
+  min-height: 8rem;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 10px;
+  opacity:1;
+  -webkit-animation: 4s linear animationBanner;
+  -moz-animation: 4s linear animationBanner;
+    -o-animation: 4s linear animationBanner;
+       animation: 4s linear animationBanner;
+  z-index: 1031;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#donpeterBanner .banner p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  animation: none;
+  visibility: visible;
+}
+#donpeterBanner .buy-license {
+  text-decoration: underline;
+}
+#donpeterBanner .banner .btn {
+  margin: 0.3rem 0.5rem;
+  animation: none;
+  visibility: visible;
+}
+.navbar.opened {
+    z-index: 1032;
+}
+@-webkit-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+@-moz-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+@-o-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+   @keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
+@-webkit-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
+@-moz-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
+@-o-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
+   @keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
+   
+@-webkit-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@-moz-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@-o-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+@keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+
+@media(max-width: 767px) {
+  #donpeterBanner.container-banner {
+    height: 12rem;
+  }
+  #donpeterBanner .banner {
+    min-height: 12rem;
+  }
+  @-webkit-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+  @-moz-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+  @-o-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+    @keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
+  @-webkit-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
+  @-moz-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
+  @-o-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
+    @keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
+
+  @-webkit-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @-moz-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @-o-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+  @keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
+}
+</style>
+<script type="text/javascript" id="www-widgetapi-script" src="./assets/www-widgetapi.js" async=""></script><script async="" src="./assets/iframe_api"></script><script src="chrome-extension://ajdpfmkffanmkhejnopjppegokpogffp/assets/prompt.js"></script></head>
+
+<div class="container-banner container-banner-closing" id="donpeterBanner">
+  <div class="banner align-center">
+    <button type="button" onclick="document.getElementById(&#39;donpeterBanner&#39;).classList.add(&#39;container-banner-closing&#39;)" class="btn-close" aria-label="Close" style="position: fixed;top: 16px;right: 16px;"></button>
+    <div class="mbr-section-btn">
+    </div>
+  </div>
+</div>
+  
+  <section data-bs-version="5.1" class="menu menu2 cid-uekBltbY7R" once="menu" id="menu-5-uekBltbY7R">
+	
+
+	<nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg opacityScroll">
+		<div class="container">
+			<div class="navbar-brand">
+				<span class="navbar-logo">
+					<a href="">
+						<img src="./assets/photo-1531097023973-44a8761c85e1.jpeg" alt="" style="height: 4.3rem;">
+					</a>
+				</span>
+				<span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4" href="">DonPeter</a></span>
+			</div>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<div class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</button>
+			<div class="collapse navbar-collapse opacityScroll" id="navbarSupportedContent">
+				<ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
+						<a class="nav-link link text-black display-4" href="">Pedidos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link link text-black display-4" href="" aria-expanded="false">Nosotros</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link link text-black display-4" href="">Equipo</a>
+					</li></ul>
+				
+				<div class="navbar-buttons mbr-section-btn">
+					<a class="btn btn-primary display-4" href="">Ordenar Ahora</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+</section>
+
+<section data-bs-version="5.1" class="header18 cid-uekBltbBOG mbr-fullscreen" data-bg-video="https://www.youtube.com/embed/dPgcmnxktqw?autoplay=1&amp;loop=1&amp;playlist=dPgcmnxktqw&amp;t=20&amp;mute=1&amp;playsinline=1&amp;controls=0&amp;showinfo=0&amp;autohide=1&amp;allowfullscreen=true&amp;mode=transparent" id="hero-15-uekBltbBOG"><div class="mbr-background-video-preview" style="display: block; background-size: cover; background-position: center center; background-image: url(&quot;https://img.youtube.com/vi/dPgcmnxktqw/maxresdefault.jpg&quot;);"></div><div style="overflow: hidden; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"><div style="background: rgb(0, 0, 0); inset: 0px;"><div class="mbr-video-foreground" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; pointer-events: none; overflow: hidden;"><iframe class="mbr-background-video" id="ytplayer-d7eb03" style="margin-top: 0px; max-width: initial; transition-property: opacity; transition-duration: 1000ms; pointer-events: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; transform: scale(1.2);" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="CINEMATIC HOT DOG B ROLL EPIC - TRANSIÇÕES E TOMAS" width="1920" height="1080" src="./assets/dPgcmnxktqw.html"></iframe></div></div></div>
+  
+
+  <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="content-wrap col-12 col-md-12">
+        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
+          <strong>Don Peter - Comida y Bebida</strong>
+        </h1>
+        
+        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">¡Bienvenidos a la Experiencia DonPeter! Haz tus pedidos y disfruta de nuestros deliciosos completos chilenos.</p>
+        <div class="mbr-section-btn">
+          <a class="btn btn-white-outline display-7" href="">¡A Comer!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="article07 cid-uekBltbbbw" id="about-us-7-uekBltbbbw">
+  
+
+  
+  
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="card col-md-12 col-lg-10">
+        <div class="card-wrapper">
+          <h3 class="card-title mbr-fonts-style mbr-white mt-3 mb-4 display-2">
+            <div class="align-center">
+            <strong>Sobre Nosotros</strong>
+            </div>
+          </h3>
+          <div class="row card-box align-left">
+            <div class="item features-without-image col-12">
+              <div class="item-wrapper">
+                
+                <p class="mbr-text mbr-fonts-style display-7">En DonPeter, nos apasiona llevar la auténtica experiencia de los completos chilenos directamente a tus manos.</p>
+              </div>
+            </div>
+            <div class="item features-without-image col-12">
+              <div class="item-wrapper">
+                
+                <p class="mbr-text mbr-fonts-style display-7">¡Olvida las filas interminables! Con nosotros, tus pedidos estarán listos para ser recogidos en un abrir y cerrar de ojos.</p>
+              </div>
+            </div>
+            <div class="item features-without-image col-12">
+              <div class="item-wrapper">
+                
+                <p class="mbr-text mbr-fonts-style display-7">¡Rápido, delicioso y sin esperas! ¡Así es como DonPeter revoluciona la forma en que disfrutas de la comida rápida!</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="list05 cid-uekBltbXJM" id="faq-3-uekBltbXJM">
+    
+    <div class="container">
+        <div class="col-12 mb-5 content-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>Preguntas Frecuentes</strong>
+            </h3>
+            
+        </div>
+        <div class="row justify-content-center ">
+            <div class="col-12 col-lg-8">
+                <div class="item features-without-image col-12 active">
+                    <div class="item-wrapper">
+                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                            <strong>¿Cómo hago un pedido?</strong></h5>
+                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">Realizar un pedido en DonPeter es tan fácil como un clic. Navega por nuestro menú, arma tu pedido y ¡listo!</p>
+                    </div>
+                </div>
+                <div class="item features-without-image col-12">
+                    <div class="item-wrapper">
+                        <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                            <strong>¿Cuál es el tiempo de espera?</strong></h5>
+                        <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">En DonPeter, el tiempo de espera es cosa del pasado. Una vez hagas tu pedido, estará listo para ser recogido en minutos.</p>
+                    </div>
+                </div>
+                <div class="item features-without-image col-12">
+                  <div class="item-wrapper">
+                      <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                          <strong>¿Ofrecen opciones vegetarianas?</strong></h5>
+                      <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">¡Por supuesto! En DonPeter, también pensamos en nuestros amigos vegetarianos. Disfruta de opciones deliciosas libres de carne.</p>
+                  </div>
+              </div>
+              <div class="item features-without-image col-12">
+                <div class="item-wrapper">
+                    <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-5">
+                        <strong>¿Cómo puedo contactar al equipo?</strong></h5>
+                    <p class="mbr-text mbr-fonts-style mt-0 mb-3 display-7">¡Estamos aquí para ayudarte! Contáctanos a través de nuestro chat en línea o visítanos en nuestro carrito para una experiencia personalizada.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section data-bs-version="5.1" class="header12 cid-uekBltcJEa" id="call-to-action-8-uekBltcJEa">
+    
+
+    
+    
+
+    <div class="text-center container">
+        <div class="row mb-4 justify-content-center">
+            <div class="col-12 col-md-4">
+                <img src="./assets/photo-1612392062631-94dd858cba88.jpeg" alt="">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-12 content-head">
+                <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2">
+                    <strong>Haz tu pedido ahora</strong>
+                </h1>
+                <p class="mbr-text mbr-fonts-style mb-4 display-7">Disfruta de la comodidad de ordenar desde tu móvil.</p>
+                <div class="mbr-section-btn mt-4">
+                    <a class="btn btn-primary display-7" href="">Ordenar ahora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="article05 cid-uekBltdx7j" id="generic-text-5-uekBltdx7j">
+  
+
+  
+  
+
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12">
+        <div class="card-wrapper">
+          <div class="row">
+            <div class="col-12 col-md-12 col-lg-5 image-wrapper">
+              <img class="w-100" src="./assets/photo-1607103071568-159bb70b4bf0.jpeg" alt="">
+            </div>
+            <div class="col-12 col-lg col-md-12">
+              <div class="text-wrapper align-left">
+                <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2">
+                  <strong>¡Bienvenidos a DonPeter!</strong>
+                </h1>
+                <p class="mbr-text mbr-fonts-style mb-3 display-7">En DonPeter, nos apasiona ofrecerte los mejores completos chilenos con un toque único y delicioso.</p>
+                <p class="mbr-text mbr-fonts-style mb-3 display-7">Nuestra página web está diseñada para que puedas realizar tus pedidos de forma rápida y sencilla, evitando las largas esperas.</p>
+                <p class="mbr-text mbr-fonts-style display-7">¡Ven a visitarnos y descubre por qué somos la mejor opción para satisfacer tus antojos de comida rápida!</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="features16 cid-uekBltd3ff" id="features-32-uekBltd3ff">
+    
+    
+    
+    <div class="container">
+        
+        <div class="row justify-content-center">
+            <div class="item features-without-image col-12 col-lg-4">
+                <div class="item-wrapper">
+                    <div class="card-box">
+                        <div class="img-box">
+                            <div class="image-wrapper mb-3">
+                                <img src="./assets/photo-1612392062798-4117917fcc50.jpeg" alt="">
+                            </div>
+                        </div>
+                        <h4 class="card-title mbr-fonts-style mb-0 display-7">
+                            <strong>Fácil y rápido</strong>
+                        </h4>
+                        <h5 class="card-text mbr-fonts-style mt-3 display-7">Ordena en segundos desde tu móvil.</h5>
+                        <div class="link-wrap">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-lg-4">
+                <div class="item-wrapper">
+                    <div class="card-box">
+                        <div class="img-box">
+                            <div class="image-wrapper mb-3">
+                                <img src="./assets/photo-1582254465498-6bc70419b607.jpeg" alt="">
+                            </div>
+                        </div>
+                        <h4 class="card-title mbr-fonts-style mb-0 display-7">
+                            <strong>Retiro conveniente</strong>
+                        </h4>
+                        <h5 class="card-text mbr-fonts-style mt-3 display-7">Recoge tu pedido sin esperas innecesarias.</h5>
+                        <div class="link-wrap">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-lg-4">
+                <div class="item-wrapper">
+                    <div class="card-box">
+                        <div class="img-box">
+                            <div class="image-wrapper mb-3">
+                                <img src="./assets/photo-1590759877531-559907fd23d6.jpeg" alt="">
+                            </div>
+                        </div>
+                        <h4 class="card-title mbr-fonts-style mb-0 display-7">
+                            <strong>Sabor auténtico</strong>
+                        </h4>
+                        <h5 class="card-text mbr-fonts-style mt-3 display-7">Disfruta de la verdadera esencia de Chile.</h5>
+                        <div class="link-wrap">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-lg-4">
+                <div class="item-wrapper">
+                    <div class="card-box">
+                        <div class="img-box">
+                            <div class="image-wrapper mb-3">
+                                <img src="./assets/photo-1576414159775-efef7e09c04b.jpeg" alt="">
+                            </div>
+                        </div>
+                        <h4 class="card-title mbr-fonts-style mb-0 display-7">
+                            <strong>Variedad única</strong>
+                        </h4>
+                        <h5 class="card-text mbr-fonts-style mt-3 display-7">Explora nuestra amplia selección de completos.</h5>
+                        <div class="link-wrap">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-lg-4">
+                <div class="item-wrapper">
+                    <div class="card-box">
+                        <div class="img-box">
+                            <div class="image-wrapper mb-3">
+                                <img src="./assets/photo-1515875976234-9d59c3ef288d.jpeg" alt="">
+                            </div>
+                        </div>
+                        <h4 class="card-title mbr-fonts-style mb-0 display-7">
+                            <strong>Calidad garantizada</strong>
+                        </h4>
+                        <h5 class="card-text mbr-fonts-style mt-3 display-7">Ingredientes frescos y sabrosos en cada bocado.</h5>
+                        <div class="link-wrap">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-lg-4">
+                <div class="item-wrapper">
+                    <div class="card-box">
+                        <div class="img-box">
+                            <div class="image-wrapper mb-3">
+                                <img src="./assets/photo-1518208573537-70867b0f77d8.jpeg" alt="">
+                            </div>
+                        </div>
+                        <h4 class="card-title mbr-fonts-style mb-0 display-7">
+                            <strong>Experiencia única</strong>
+                        </h4>
+                        <h5 class="card-text mbr-fonts-style mt-3 display-7">Vive momentos inolvidables con DonPeter.</h5>
+                        <div class="link-wrap">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features023 cid-uekBlteGRm" id="metrics-1-uekBlteGRm">
+
+    
+
+    
+    
+    <div class="container">
+        
+        <div class="row content-row justify-content-center">
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="title mb-2 mb-md-3">
+                        <span class="num mbr-fonts-style display-1">
+                            <strong>¡Ordena Ahora!</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Rápido y Fácil</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="title mb-2 mb-md-3">
+                        <span class="num mbr-fonts-style display-1">
+                            <strong>¡Completa tu Pedido!</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Sin Esperas</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6 col-lg-4 item-mb">
+                <div class="item-wrapper">
+                    <div class="title mb-2 mb-md-3">
+                        <span class="num mbr-fonts-style display-1">
+                            <strong>¡Retira y Disfruta!</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Sabores Auténticos</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="slider4 mbr-embla cid-uekBlteBTz d-md-none">
+  
+  
+  <div class="container-fluid">
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="embla position-relative" data-skip-snaps="true" data-align="center" data-contain-scroll="trimSnaps" data-loop="true" data-auto-play="true" data-auto-play-interval="5" data-draggable="true">
+          <div class="embla__viewport is-draggable">
+            <div class="embla__container" style="transform: translate3d(36.2414%, 0px, 0px);">
+              <div class="embla__slide slider-image item is-selected" style="margin-left: 1rem; margin-right: 1rem; left: 0%;">
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img src="./assets/photo-1633785587171-577b501d8dcb.jpeg" alt="" title="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="embla__slide slider-image item is-selected" style="margin-left: 1rem; margin-right: 1rem; left: 0%;">
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img src="./assets/photo-1619683257272-453f50763cfe.jpeg" alt="" title="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="embla__slide slider-image item is-selected" style="margin-left: 1rem; margin-right: 1rem; left: 0%;">
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img src="./assets/photo-1568382813964-8b5e8eac321f.jpeg" alt="" title="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="embla__slide slider-image item is-selected" style="margin-left: 1rem; margin-right: 1rem; left: -137.586%;">
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img src="./assets/photo-1557970592-be7226b61edc.jpeg" alt="" title="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="embla__slide slider-image item is-selected" style="margin-left: 1rem; margin-right: 1rem; left: -137.586%;">
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img src="./assets/photo-1612392167062-8f76710986ba.jpeg" alt="" title="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="embla__button embla__button--prev">
+            <span class="mobi-mbri mobi-mbri-arrow-prev" aria-hidden="true"></span>
+            <span class="sr-only visually-hidden visually-hidden">Previous</span>
+          </button>
+          <button class="embla__button embla__button--next">
+            <span class="mobi-mbri mobi-mbri-arrow-next" aria-hidden="true"></span>
+            <span class="sr-only visually-hidden visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="features03 cid-uekBlteLWH" id="events-1-uekBlteLWH">
+  
+  
+  <div class="container-fluid">
+    <div class="row justify-content-center mb-5">
+      <div class="col-12 content-head">
+        <div class="mbr-section-head">
+          <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+            <strong>Próximos Eventos</strong>
+          </h4>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="item features-image col-12 col-md-6 col-lg-3 active">
+        <div class="item-wrapper">
+          <div class="item-img mb-3">
+            <img src="./assets/photo-1536410455700-9f81e0f77d40.jpeg" alt="" title="">
+          </div>
+          <div class="item-content align-left">
+            <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-5">
+              <strong>¡Fiesta de Sabores Chilenos!</strong>
+            </h5>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Sábado, 1 de Junio</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Ven y disfruta de una explosión de sabores chilenos en nuestro carrito. ¡No te lo pierdas!</p>
+            <div class="mbr-section-btn item-footer">
+              <a href="" class="btn item-btn btn-primary display-7">¡Únete!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item features-image col-12 col-md-6 col-lg-3">
+        <div class="item-wrapper">
+          <div class="item-img mb-3">
+            <img src="./assets/photo-1577008507686-7418c4e06774.jpeg" alt="" title="" data-slide-to="1" data-bs-slide-to="1">
+          </div>
+          <div class="item-content align-left">
+            <h5 class="item-title mbr-fonts-style mb-2 mt-0 display-5">
+              <strong>¡Noche de Completos Especiales!</strong>
+            </h5>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Viernes, 7 de Junio</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Descubre nuevas combinaciones y sabores en nuestra noche especial de completos. ¡Te sorprenderás!</p>
+            <div class="mbr-section-btn item-footer">
+              <a href="" class="btn item-btn btn-primary display-7">¡Únete!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item features-image col-12 col-md-6 col-lg-3">
+        <div class="item-wrapper">
+          <div class="item-img mb-3">
+            <img src="./assets/photo-1612392166886-ee8475b03af2.jpeg" alt="" title="" data-slide-to="2" data-bs-slide-to="2">
+          </div>
+          <div class="item-content align-left">
+            <h5 class="item-title mbr-fonts-style mb-2 mt-0 display-5">
+              <strong>¡Día de la Empanada!</strong>
+            </h5>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Miércoles, 12 de Junio</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Celebra con nosotros el clásico sabor de las empanadas chilenas. ¡Una experiencia única!</p>
+            <div class="mbr-section-btn item-footer">
+              <a href="" class="btn item-btn btn-primary display-7">¡Únete!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item features-image col-12 col-md-6 col-lg-3">
+        <div class="item-wrapper">
+          <div class="item-img mb-3">
+            <img src="./assets/photo-1541214113241-21578d2d9b62.jpeg" alt="" title="" data-slide-to="2" data-bs-slide-to="2">
+          </div>
+          <div class="item-content align-left">
+            <h5 class="item-title mbr-fonts-style mb-2 mt-0 display-5">
+              <strong>¡Cata de Salsas Picantes!</strong>
+            </h5>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Domingo, 16 de Junio</p>
+            <p class="mbr-text mbr-fonts-style mb-3 display-7">Desafía tu paladar con nuestra variedad de salsas picantes. ¿Te atreves a probarlas todas?</p>
+            <div class="mbr-section-btn item-footer">
+              <a href="" class="btn item-btn btn-primary display-7">¡Únete!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-bs-version="5.1" class="social05 cid-uekBlteUpa" id="follow-us-2-uekBlteUpa">
+    
+
+    
+
+    <div class="container">
+        <div class="row">
+            <h3 class="mbr-section-title align-center mb-5 mbr-fonts-style display-2">
+                <strong>Síguenos en Redes Sociales</strong>
+            </h3>
+            <div class="col-12">
+                <div class="social-row">
+                    <div class="soc-item">
+                        <a href="" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-facebook"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="" target="_blank">
+                            <span class="mbr-iconfont socicon-twitter socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="" target="_blank">
+                            <span class="mbr-iconfont socicon-instagram socicon"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-linkedin"></span>
+                        </a>
+                    </div>
+                    <div class="soc-item">
+                        <a href="" target="_blank">
+                            <span class="mbr-iconfont socicon socicon-twitch"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="clients04 cid-uekBlteFE8" id="sponsors-1-uekBlteFE8">
+    
+    
+    <div class="container-fluid">
+        <div class="row justify-content-center mb-5">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head">
+                    <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>¡Completo Chileno!</strong>
+                    </h4>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2 active">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="./assets/photo-1606136968306-ab2868cc1f21.jpeg" alt="" title="" data-slide-to="1" data-bs-slide-to="1">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="./assets/photo-1596622723231-b20320c7346b.jpeg" alt="" title="" data-slide-to="2" data-bs-slide-to="2">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="./assets/photo-1681415851723-dca11d0ec9a6.jpeg" alt="" title="" data-slide-to="3" data-bs-slide-to="3">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="./assets/photo-1579041925709-798d7d0fed1d.jpeg" alt="" title="" data-slide-to="4" data-bs-slide-to="4">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="./assets/photo-1617727553252-65863c156eb0.jpeg" alt="" title="" data-slide-to="5" data-bs-slide-to="5">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
+                <div class="item-wrapper">
+                    <div class="">
+                        <img src="./assets/photo-1554463529-e27854014799.jpeg" alt="" title="" data-slide-to="6" data-bs-slide-to="6">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="form5 cid-uekBlteuZ9" id="contact-form-3-uekBlteuZ9">
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>¡Haz tu Pedido!</strong>
+                    </h3>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+                <form action="" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="nbcMNClWdu4KrB3di5kIiDi81loBBQbTHousyQIxeoVvQudmwwT+TFU6GPJ0og+Pf2DGsuQUZAyIBCZD0s8kj+2i1qE54qrqzm74Nh/rCR1hGfIdICBDGbWvcliHl33L">
+                    <div class="row">
+                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                            Oops...! some problem!
+                        </div>
+                    </div>
+                    <div class="dragArea row">
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="name">
+                            <input type="text" name="name" placeholder="Nombre" data-form-field="name" class="form-control" value="" id="name-contact-form-3-uekBlteuZ9">
+                        </div>
+                        <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <input type="email" name="email" placeholder="Email" data-form-field="email" class="form-control" value="" id="email-contact-form-3-uekBlteuZ9">
+                        </div>
+                        <div class="col-12 form-group mb-3 mb-3" data-for="url">
+                            <input type="url" name="url" placeholder="Teléfono" data-form-field="url" class="form-control" value="" id="url-contact-form-3-uekBlteuZ9">
+                        </div>
+                        <div class="col-12 form-group mb-3" data-for="textarea">
+                            <textarea name="textarea" placeholder="Mensaje" data-form-field="textarea" class="form-control" id="textarea-contact-form-3-uekBlteuZ9"></textarea>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                            <button type="submit" class="btn btn-primary display-7">Enviar Pedido</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="contacts01 cid-uekBltem8u" id="contacts-1-uekBltem8u">
+    
+
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                        <strong>¡Contáctanos!</strong>
+                    </h3>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item features-without-image col-12 col-md-6 active">
+                <div class="item-wrapper">
+                    <div class="text-wrapper">
+                        <h6 class="card-title mbr-fonts-style mb-3 display-5">
+                            <strong>Teléfono</strong>
+                        </h6>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            <a href="tel:+56 9 1234 5678" class="text-black">+56 9 1234 5678</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6">
+                <div class="item-wrapper">
+                    <div class="text-wrapper">
+                        <h6 class="card-title mbr-fonts-style mb-3 display-5">
+                            <strong>Email</strong>
+                        </h6>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            <a href="mailto:info@donpeter.com" class="text-black">info@donpeter.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6">
+                <div class="item-wrapper">
+                    <div class="text-wrapper">
+                        <h6 class="card-title mbr-fonts-style mb-3 display-5">
+                            <strong>Dirección</strong>
+                        </h6>
+                        <p class="mbr-text mbr-fonts-style display-7">Santiago Chile</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item features-without-image col-12 col-md-6">
+                <div class="item-wrapper">
+                    <div class="text-wrapper">
+                        <h6 class="card-title mbr-fonts-style mb-3 display-5">
+                            <strong>Horario</strong>
+                        </h6>
+                        <p class="mbr-text mbr-fonts-style display-7">Lun-Dom: 11am - 9pm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="footer2 cid-uekBlteoHm" once="footers" id="footer-5-uekBlteoHm">
+    
+
+    
+    
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6 center mt-2 mb-3">
+                <p class="mbr-fonts-style copyright mb-0 display-7">© 2024 DonPeter. Todos los derechos reservados.</p>
+            </div>
+            <div class="col-12 col-lg-6 center">
+                <div class="row-links mt-2 mb-3">
+                    <ul class="row-links-soc">
+                        
+                        
+                        
+                        
+                    <li class="row-links-soc-item mbr-fonts-style display-7">
+                            <a href="" class="text-white">Inicio</a>
+                        </li><li class="row-links-soc-item mbr-fonts-style display-7">
+                            <a href="" class="text-white">Menú</a>
+                        </li><li class="row-links-soc-item mbr-fonts-style display-7">
+                            <a href="" class="text-white">Contacto</a>
+                        </li><li class="row-links-soc-item mbr-fonts-style display-7">
+                            <a href="" class="text-white">Sobre Nosotros</a>
+                        </li></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">‌</p></section><script src="./assets/bootstrap.bundle.min.js"></script>  <script src="./assets/smooth-scroll.js"></script>  <script src="./assets/index.js"></script>  <script src="./assets/navbar-dropdown.js"></script>  <script src="./assets/player.js"></script>  <script src="./assets/embla.min.js"></script>  <script src="./assets/script.js"></script>  <script src="./assets/script(1).js"></script>  <script src="./assets/formoid.min.js"></script>  
+  
+  
+
+</body></html>

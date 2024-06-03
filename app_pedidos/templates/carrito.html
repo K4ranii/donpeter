@@ -1,0 +1,115 @@
+
+
+{% load humanize %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'assets/css/menu_styles/animate.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/menu_styles/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/menu_styles/magnific.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/menu_styles/nice-select.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/menu_styles/owl.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/menu_styles/slick-slide.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/menu_styles/fontawesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/menu_styles/remixicon.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/menu_styles/style.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/menu_styles/responsive.css' %}">
+<style>
+    #carrito-container-mobile,
+    #carrito-container-desktop {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 300px;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Ajusta la distancia desde la parte superior */
+        right: 10px;
+        z-index: 200; /* Un valor más alto que el de la barra de navegación para asegurar que el carrito esté por encima */
+    }
+
+    .menu-cart {
+        cursor: pointer;
+    }
+
+    .carrito-container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .carrito-container table {
+        margin: 0 auto;
+    }
+
+    .carrito-container .boton-limpiar,
+    .carrito-container .boton-comprar {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+        padding: 6px 12px; /* Ajusta el espaciado interno de los botones */
+    }
+
+    .carrito-container .botones-cantidad .btn {
+        margin-left: 0; /* Ajusta el margen izquierdo de los botones */
+        margin-top: 5px;
+    }
+
+    /* Media query para dispositivos móviles */
+    @media (max-width: 768px) {
+        .carrito-container .boton-limpiar,
+        .carrito-container .boton-comprar {
+            padding: 5px 10px; /* Ajusta el tamaño de los botones para dispositivos móviles */
+        }
+    }
+</style>
+<div class="carrito-container">
+    <table class="table table-bordered table-striped">
+        <thead class="thead-light">
+            <tr class="text-center">
+                <th colspan="3" style="font-weight:bold; font-size:18px">Carrito</th>
+            </tr>
+            <tr>
+                <th class="nombre">NOMBRE</th>
+                <th class="precio">PRECIO</th>
+                <th class="cantidad">CANTIDAD</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if request.session.carrito.items %}
+                {% for key, value in request.session.carrito.items %} 
+                    <tr>
+                        <td>{{ value.nombre }}</td>
+                        <td>$ {{ value.precio }}</td>
+                        <td>
+                            <span class="cantidad-numero">{{ value.cantidad }}</span>
+                            <div class="botones-cantidad">
+                                <a href="{% url 'agregar_de_iframe' value.producto_id %}" class="badge btn btn-success">+</a>
+                                <a href="{% url 'restar'  value.producto_id %}" class="badge btn btn-warning">-</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="2" class="total">Total:</th>
+                        <td>$ {{ value.total|intcomma }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3">
+                        <div class="alert alert-info text-center" style="font-weight: bold;">Sin Productos</div>
+                    </td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+    <hr>
+    <div class="row text-center">
+        <div class="col-6">
+            <a href="{% url 'limpiar' %}" class="btn btn-outline-danger btn-sm boton-limpiar">Limpiar Carrito</a>
+        </div> 
+        <div class="col-6">
+            <a href="{% url 'procesar_pago' %}" class="btn btn-outline-primary btn-sm boton-comprar">Comprar</a>
+        </div>
+    </div>
+</div>

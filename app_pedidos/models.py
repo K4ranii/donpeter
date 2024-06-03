@@ -17,6 +17,7 @@ class Pedido(models.Model):
     telefono_cliente = models.CharField(max_length=20, verbose_name='Numero de Telefono')
     fecha = models.DateTimeField(auto_now_add=True, verbose_name="Fecha Creacion")
     estado = models.CharField(max_length=20, default='Pendiente', verbose_name='Estado')
+    detalles = models.TextField(blank=True, null=True, verbose_name="Detalles del Pedido")
 
     def __str__(self):
         return self.id_pedido

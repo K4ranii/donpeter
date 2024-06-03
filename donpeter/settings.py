@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app_pedidos',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -70,7 +72,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'donpeter.wsgi.application'
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
+XS_SHARING_ALLOWED_METHODS = ['POST','GET','OPTIONS', 'PUT', 'DELETE']
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -80,7 +84,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+SESSION_COOKIE_AGE = 3600
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

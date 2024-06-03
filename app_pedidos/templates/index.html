@@ -1,124 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html class="desktop mbr-site-loaded"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="./assets/photo-1531097023973-44a8761c85e1.jpeg" type="image/x-icon">
-  <meta name="description" content="Somos DonPeter, el mejor lugar para disfrutar completos chilenos. Realiza tus pedidos y evita las filas y tiempos de espera.">
+  <link rel="shortcut icon" href="{% static 'assets/imagenes/logo_don_peter.png' %}" type="image/x-icon">
+  <meta name="description" content="Somos DonPeter, el mejor lugar para disfrutar completos. Realiza tus pedidos y evita las filas y tiempos de espera.">
   
   
   <title>DonPeter</title>
-  <link rel="stylesheet" href="./assets/donpeter2.css">
-  <link rel="stylesheet" href="./assets/bootstrap.min.css">
-  <link rel="stylesheet" href="./assets/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="./assets/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="./assets/style.css">
-  <link rel="stylesheet" href="./assets/styles.css">
-  <link rel="stylesheet" href="./assets/style(1).css">
-  <link rel="stylesheet" href="./assets/css2" as="style" onload="this.onload=null;this.rel=&#39;stylesheet&#39;">
+  <link rel="stylesheet" href="{% static 'assets/donpeter2.css' %}">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Opcional: Enlace al archivo CSS de Bootstrap Grid -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-grid.min.css" rel="stylesheet">
+  
+  <!-- Opcional: Enlace al archivo CSS de Bootstrap Reboot -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-reboot.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/style(1).css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css2' %}" as="style">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap"></noscript>
-  <link rel="preload" as="style" href="./assets/mbr-additional.css"><link rel="stylesheet" href="./assets/mbr-additional.css" type="text/css">
-
+  <link rel="stylesheet" href="{% static 'assets/css/mbr-additional.css' %}"><link rel="stylesheet" href="{% static 'assets/css/mbr-additional.css' %}" type="text/css">
+  
+  <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
   
   
   
 
-<style>
-.navbar-fixed-top {
-  top: auto;
-}
-#donpeterBanner.container-banner {
-  height: 8rem;
-  opacity: 1;
-  -webkit-animation: 4s linear animationHeight;
-  -moz-animation: 4s linear animationHeight;
-    -o-animation: 4s linear animationHeight;
-       animation: 4s linear animationHeight;
-       transition: all  0.5s;
-}
-#donpeterBanner.container-banner.container-banner-closing {
-  pointer-events: none;
-  height: 0;
-  opacity: 0;
-  -webkit-animation: 0.5s linear animationClosing;
-  -moz-animation:  0.5s linear animationClosing;
-    -o-animation:  0.5s linear animationClosing;
-       animation:  0.5s linear animationClosing;
-}
-#donpeterBanner .banner {
-  min-height: 8rem;
-  position:fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #fff;
-  padding: 10px;
-  opacity:1;
-  -webkit-animation: 4s linear animationBanner;
-  -moz-animation: 4s linear animationBanner;
-    -o-animation: 4s linear animationBanner;
-       animation: 4s linear animationBanner;
-  z-index: 1031;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#donpeterBanner .banner p {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  animation: none;
-  visibility: visible;
-}
-#donpeterBanner .buy-license {
-  text-decoration: underline;
-}
-#donpeterBanner .banner .btn {
-  margin: 0.3rem 0.5rem;
-  animation: none;
-  visibility: visible;
-}
-.navbar.opened {
-    z-index: 1032;
-}
-@-webkit-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
-@-moz-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
-@-o-keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
-   @keyframes animationBanner { 0% { opacity: 0; top: -8rem; } 75% { opacity: 0; top: -8rem; } 100% { opacity: 1; top: 0; } }
-@-webkit-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
-@-moz-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
-@-o-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
-   @keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 8rem; } }
-   
-@-webkit-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-@-moz-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-@-o-keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-@keyframes animationClosing { 0% { height: 8rem; opacity: 1; } 30% { height: 8rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
 
-@media(max-width: 767px) {
-  #donpeterBanner.container-banner {
-    height: 12rem;
-  }
-  #donpeterBanner .banner {
-    min-height: 12rem;
-  }
-  @-webkit-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
-  @-moz-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
-  @-o-keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
-    @keyframes animationBanner { 0% { opacity: 0; top: -12rem; } 75% { opacity: 0; top: -12rem; } 100% { opacity: 1; top: 0; } }
-  @-webkit-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
-  @-moz-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
-  @-o-keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
-    @keyframes animationHeight { 0% { height: 0; } 75% { height: 0; } 100% { height: 12rem; } }
-
-  @-webkit-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-  @-moz-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-  @-o-keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-  @keyframes animationClosing { 0% { height: 12rem; opacity: 1; } 30% { height: 12rem; opacity: 0.5;} 100% { height: 0; opacity: 0;} }
-}
-</style>
-<script type="text/javascript" id="www-widgetapi-script" src="./assets/www-widgetapi.js" async=""></script><script async="" src="./assets/iframe_api"></script><script src="chrome-extension://ajdpfmkffanmkhejnopjppegokpogffp/assets/prompt.js"></script></head>
+<script type="text/javascript" id="www-widgetapi-script" src="{% static 'assets/www-widgetapi.js' %}" async=""></script><script async="" src="{% static 'assets/iframe_api' %}"></script><script src="{% static 'assets/js/prompt.js' %}"></script></head>
 
 <div class="container-banner container-banner-closing" id="donpeterBanner">
   <div class="banner align-center">
@@ -132,14 +44,16 @@
 	
 
 	<nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg opacityScroll">
+    
 		<div class="container">
+
 			<div class="navbar-brand">
 				<span class="navbar-logo">
 					<a href="">
-						<img src="./assets/photo-1531097023973-44a8761c85e1.jpeg" alt="" style="height: 4.3rem;">
+						<img src="{% static 'assets/imagenes/logo_don_peter.png' %}" alt="" style="height: 6.5rem;">
 					</a>
 				</span>
-				<span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4" href="">DonPeter</a></span>
+				<span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4" href="">DonPeter - Portal de Pedidos</a></span>
 			</div>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 				<div class="hamburger">
@@ -168,25 +82,118 @@
 	</nav>
 </section>
 
-<section data-bs-version="5.1" class="header18 cid-uekBltbBOG mbr-fullscreen" data-bg-video="https://www.youtube.com/embed/dPgcmnxktqw?autoplay=1&amp;loop=1&amp;playlist=dPgcmnxktqw&amp;t=20&amp;mute=1&amp;playsinline=1&amp;controls=0&amp;showinfo=0&amp;autohide=1&amp;allowfullscreen=true&amp;mode=transparent" id="hero-15-uekBltbBOG"><div class="mbr-background-video-preview" style="display: block; background-size: cover; background-position: center center; background-image: url(&quot;https://img.youtube.com/vi/dPgcmnxktqw/maxresdefault.jpg&quot;);"></div><div style="overflow: hidden; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"><div style="background: rgb(0, 0, 0); inset: 0px;"><div class="mbr-video-foreground" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; pointer-events: none; overflow: hidden;"><iframe class="mbr-background-video" id="ytplayer-d7eb03" style="margin-top: 0px; max-width: initial; transition-property: opacity; transition-duration: 1000ms; pointer-events: none; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; transform: scale(1.2);" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="CINEMATIC HOT DOG B ROLL EPIC - TRANSIÇÕES E TOMAS" width="1920" height="1080" src="./assets/dPgcmnxktqw.html"></iframe></div></div></div>
-  
+<style>
+  .mbr-background-video-preview {
+      display: block;
+      background-size: cover;
+      background-position: center center;
+      background-image: url('{% static "assets/imagenes/carga.gif" %}');
+  }
+  .mbr-video-foreground {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+  }
+  #player {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover; /* Ajusta el contenido del elemento manteniendo su relación de aspecto y cubriendo el área asignada */
+    pointer-events: none;
+}
+
+@media only screen and (max-width: 767px) {
+    #player {
+        width: 140%; /* Ajusta el ancho al 140% de la ventana en dispositivos móviles */
+        left: -20%; /* Ajusta la posición para centrar el video */
+    }
+}
+</style>
+</head>
+<body>
+<section data-bs-version="5.1" class="header18 cid-uekBltbBOG mbr-fullscreen" id="hero-15-uekBltbBOG">
+  <div class="mbr-background-video-preview"></div>
+  <div style="overflow: hidden; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;">
+      <div style="background: rgb(0, 0, 0); inset: 0px;">
+          <div class="mbr-video-foreground">
+              <div id="player"></div>
+          </div>
+      </div>
+  </div>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    var player;
+    var loopStartTime = 10;  // El tiempo en segundos donde el video comenzará
+    var loopEndTime = 70;   // El tiempo en segundos donde el video se reiniciará
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            videoId: 'dPgcmnxktqw',
+            playerVars: {
+                'autoplay': 1,
+                'controls': 0,
+                'loop': 0,
+                'rel': 0,
+                'showinfo': 0,
+                'modestbranding': 1,
+                'iv_load_policy': 3,
+                'mute': 1,
+                'playsinline': 1,
+                'start': loopStartTime
+            },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.playVideo();
+        checkTime();
+    }
+
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
+            checkTime();
+        }
+    }
+
+    function checkTime() {
+        if (player.getCurrentTime() >= loopEndTime) {
+            player.seekTo(loopStartTime);
+        } else {
+            setTimeout(checkTime, 100);
+        }
+    }
+    
+    
+</script>
 
   <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
   <div class="container-fluid">
-    <div class="row">
-      <div class="content-wrap col-12 col-md-12">
-        <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
-          <strong>Don Peter - Comida y Bebida</strong>
-        </h1>
-        
-        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">¡Bienvenidos a la Experiencia DonPeter! Haz tus pedidos y disfruta de nuestros deliciosos completos chilenos.</p>
-        <div class="mbr-section-btn">
-          <a class="btn btn-white-outline display-7" href="">¡A Comer!</a>
-        </div>
+      <div class="row">
+          <div class="content-wrap col-12 col-md-12">
+              <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
+                  <strong>Don Peter - Comida y Bebida</strong>
+              </h1>
+              <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">¡Bienvenidos a la Experiencia DonPeter! Haz tus pedidos y disfruta de nuestros deliciosos completos y bebidas.</p>
+              <div class="mbr-section-btn">
+                  <a class="btn btn-white-outline display-7" href="">¡A Comer!</a>
+              </div>
+          </div>
       </div>
-    </div>
   </div>
 </section>
+
+
 
 <section data-bs-version="5.1" class="article07 cid-uekBltbbbw" id="about-us-7-uekBltbbbw">
   
@@ -206,7 +213,7 @@
             <div class="item features-without-image col-12">
               <div class="item-wrapper">
                 
-                <p class="mbr-text mbr-fonts-style display-7">En DonPeter, nos apasiona llevar la auténtica experiencia de los completos chilenos directamente a tus manos.</p>
+                <p class="mbr-text mbr-fonts-style display-7">En DonPeter, nos apasiona llevar la auténtica experiencia de los completos directamente a tus manos.</p>
               </div>
             </div>
             <div class="item features-without-image col-12">
@@ -286,7 +293,7 @@
     <div class="text-center container">
         <div class="row mb-4 justify-content-center">
             <div class="col-12 col-md-4">
-                <img src="./assets/photo-1612392062631-94dd858cba88.jpeg" alt="">
+                <img src="{% static 'assets/imagenes/photo-1612392062631-94dd858cba88.jpeg' %}" alt="">
             </div>
         </div>
         <div class="row justify-content-center">
@@ -315,14 +322,14 @@
         <div class="card-wrapper">
           <div class="row">
             <div class="col-12 col-md-12 col-lg-5 image-wrapper">
-              <img class="w-100" src="./assets/photo-1607103071568-159bb70b4bf0.jpeg" alt="">
+              <img class="w-100" src="{% static 'assets/imagenes/photo-1607103071568-159bb70b4bf0.jpeg' %}" alt="">
             </div>
             <div class="col-12 col-lg col-md-12">
               <div class="text-wrapper align-left">
                 <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2">
                   <strong>¡Bienvenidos a DonPeter!</strong>
                 </h1>
-                <p class="mbr-text mbr-fonts-style mb-3 display-7">En DonPeter, nos apasiona ofrecerte los mejores completos chilenos con un toque único y delicioso.</p>
+                <p class="mbr-text mbr-fonts-style mb-3 display-7">En DonPeter, nos apasiona ofrecerte los mejores completos con un toque único y delicioso.</p>
                 <p class="mbr-text mbr-fonts-style mb-3 display-7">Nuestra página web está diseñada para que puedas realizar tus pedidos de forma rápida y sencilla, evitando las largas esperas.</p>
                 <p class="mbr-text mbr-fonts-style display-7">¡Ven a visitarnos y descubre por qué somos la mejor opción para satisfacer tus antojos de comida rápida!</p>
                 
@@ -347,7 +354,7 @@
                     <div class="card-box">
                         <div class="img-box">
                             <div class="image-wrapper mb-3">
-                                <img src="./assets/photo-1612392062798-4117917fcc50.jpeg" alt="">
+                                <img src="{% static 'assets/imagenes/photo-1612392062798-4117917fcc50.jpeg' %}" alt="">
                             </div>
                         </div>
                         <h4 class="card-title mbr-fonts-style mb-0 display-7">
@@ -365,7 +372,7 @@
                     <div class="card-box">
                         <div class="img-box">
                             <div class="image-wrapper mb-3">
-                                <img src="./assets/photo-1582254465498-6bc70419b607.jpeg" alt="">
+                                <img src="{% static 'assets/imagenes/photo-1582254465498-6bc70419b607.jpeg' %}" alt="">
                             </div>
                         </div>
                         <h4 class="card-title mbr-fonts-style mb-0 display-7">
@@ -383,7 +390,7 @@
                     <div class="card-box">
                         <div class="img-box">
                             <div class="image-wrapper mb-3">
-                                <img src="./assets/photo-1590759877531-559907fd23d6.jpeg" alt="">
+                                <img src="{% static 'assets/imagenes/photo-1590759877531-559907fd23d6.jpeg' %}" alt="">
                             </div>
                         </div>
                         <h4 class="card-title mbr-fonts-style mb-0 display-7">
@@ -401,7 +408,7 @@
                     <div class="card-box">
                         <div class="img-box">
                             <div class="image-wrapper mb-3">
-                                <img src="./assets/photo-1576414159775-efef7e09c04b.jpeg" alt="">
+                                <img src="{% static 'assets/imagenes/photo-1576414159775-efef7e09c04b.jpeg' %}" alt="">
                             </div>
                         </div>
                         <h4 class="card-title mbr-fonts-style mb-0 display-7">
@@ -419,7 +426,7 @@
                     <div class="card-box">
                         <div class="img-box">
                             <div class="image-wrapper mb-3">
-                                <img src="./assets/photo-1515875976234-9d59c3ef288d.jpeg" alt="">
+                                <img src="{% static 'assets/imagenes/photo-1515875976234-9d59c3ef288d.jpeg' %}" alt="">
                             </div>
                         </div>
                         <h4 class="card-title mbr-fonts-style mb-0 display-7">
@@ -437,7 +444,7 @@
                     <div class="card-box">
                         <div class="img-box">
                             <div class="image-wrapper mb-3">
-                                <img src="./assets/photo-1518208573537-70867b0f77d8.jpeg" alt="">
+                                <img src="{% static 'assets/imagenes/photo-1518208573537-70867b0f77d8.jpeg' %}" alt="">
                             </div>
                         </div>
                         <h4 class="card-title mbr-fonts-style mb-0 display-7">
@@ -479,7 +486,7 @@
                 <div class="item-wrapper">
                     <div class="title mb-2 mb-md-3">
                         <span class="num mbr-fonts-style display-1">
-                            <strong>¡Completa tu Pedido!</strong></span>
+                            <strong>¡Realiza tu Pedido!</strong></span>
                     </div>
                     <h4 class="card-title mbr-fonts-style display-5">
                         <strong>Sin Esperas</strong>
@@ -517,7 +524,7 @@
                 <div class="slide-content">
                   <div class="item-img">
                     <div class="item-wrapper">
-                      <img src="./assets/photo-1633785587171-577b501d8dcb.jpeg" alt="" title="">
+                      <img src="{% static 'assets/imagenes/photo-1633785587171-577b501d8dcb.jpeg' %}" alt="" title="">
                     </div>
                   </div>
                 </div>
@@ -526,7 +533,7 @@
                 <div class="slide-content">
                   <div class="item-img">
                     <div class="item-wrapper">
-                      <img src="./assets/photo-1619683257272-453f50763cfe.jpeg" alt="" title="">
+                      <img src="{% static 'assets/imagenes/photo-1619683257272-453f50763cfe.jpeg' %}" alt="" title="">
                     </div>
                   </div>
                 </div>
@@ -535,7 +542,7 @@
                 <div class="slide-content">
                   <div class="item-img">
                     <div class="item-wrapper">
-                      <img src="./assets/photo-1568382813964-8b5e8eac321f.jpeg" alt="" title="">
+                      <img src="{% static 'assets/imagenes/photo-1568382813964-8b5e8eac321f.jpeg' %}" alt="" title="">
                     </div>
                   </div>
                 </div>
@@ -544,7 +551,7 @@
                 <div class="slide-content">
                   <div class="item-img">
                     <div class="item-wrapper">
-                      <img src="./assets/photo-1557970592-be7226b61edc.jpeg" alt="" title="">
+                      <img src="{% static 'assets/imagenes/photo-1557970592-be7226b61edc.jpeg' %}" alt="" title="">
                     </div>
                   </div>
                 </div>
@@ -553,7 +560,7 @@
                 <div class="slide-content">
                   <div class="item-img">
                     <div class="item-wrapper">
-                      <img src="./assets/photo-1612392167062-8f76710986ba.jpeg" alt="" title="">
+                      <img src="{% static 'assets/imagenes/photo-1612392167062-8f76710986ba.jpeg' %}" alt="" title="">
                     </div>
                   </div>
                 </div>
@@ -592,7 +599,7 @@
       <div class="item features-image col-12 col-md-6 col-lg-3 active">
         <div class="item-wrapper">
           <div class="item-img mb-3">
-            <img src="./assets/photo-1536410455700-9f81e0f77d40.jpeg" alt="" title="">
+            <img src="{% static 'assets/imagenes/photo-1536410455700-9f81e0f77d40.jpeg' %}" alt="" title="">
           </div>
           <div class="item-content align-left">
             <h5 class="item-title mbr-fonts-style mt-0 mb-2 display-5">
@@ -609,7 +616,7 @@
       <div class="item features-image col-12 col-md-6 col-lg-3">
         <div class="item-wrapper">
           <div class="item-img mb-3">
-            <img src="./assets/photo-1577008507686-7418c4e06774.jpeg" alt="" title="" data-slide-to="1" data-bs-slide-to="1">
+            <img src="{% static 'assets/imagenes/photo-1577008507686-7418c4e06774.jpeg' %}" alt="" title="" data-slide-to="1" data-bs-slide-to="1">
           </div>
           <div class="item-content align-left">
             <h5 class="item-title mbr-fonts-style mb-2 mt-0 display-5">
@@ -626,7 +633,7 @@
       <div class="item features-image col-12 col-md-6 col-lg-3">
         <div class="item-wrapper">
           <div class="item-img mb-3">
-            <img src="./assets/photo-1612392166886-ee8475b03af2.jpeg" alt="" title="" data-slide-to="2" data-bs-slide-to="2">
+            <img src="{% static 'assets/imagenes/photo-1612392166886-ee8475b03af2.jpeg' %}" alt="" title="" data-slide-to="2" data-bs-slide-to="2">
           </div>
           <div class="item-content align-left">
             <h5 class="item-title mbr-fonts-style mb-2 mt-0 display-5">
@@ -643,7 +650,7 @@
       <div class="item features-image col-12 col-md-6 col-lg-3">
         <div class="item-wrapper">
           <div class="item-img mb-3">
-            <img src="./assets/photo-1541214113241-21578d2d9b62.jpeg" alt="" title="" data-slide-to="2" data-bs-slide-to="2">
+            <img src="{% static 'assets/imagenes/photo-1541214113241-21578d2d9b62.jpeg' %}" alt="" title="" data-slide-to="2" data-bs-slide-to="2">
           </div>
           <div class="item-content align-left">
             <h5 class="item-title mbr-fonts-style mb-2 mt-0 display-5">
@@ -722,7 +729,7 @@
             <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2 active">
                 <div class="item-wrapper">
                     <div class="">
-                        <img src="./assets/photo-1606136968306-ab2868cc1f21.jpeg" alt="" title="" data-slide-to="1" data-bs-slide-to="1">
+                        <img src="{% static 'assets/imagenes/photo-1606136968306-ab2868cc1f21.jpeg' %}" alt="" title="" data-slide-to="1" data-bs-slide-to="1">
                     </div>
                     
                 </div>
@@ -730,7 +737,7 @@
             <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
                 <div class="item-wrapper">
                     <div class="">
-                        <img src="./assets/photo-1596622723231-b20320c7346b.jpeg" alt="" title="" data-slide-to="2" data-bs-slide-to="2">
+                        <img src="{% static 'assets/imagenes/photo-1596622723231-b20320c7346b.jpeg' %}" alt="" title="" data-slide-to="2" data-bs-slide-to="2">
                     </div>
                     
                 </div>
@@ -738,7 +745,7 @@
             <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
                 <div class="item-wrapper">
                     <div class="">
-                        <img src="./assets/photo-1681415851723-dca11d0ec9a6.jpeg" alt="" title="" data-slide-to="3" data-bs-slide-to="3">
+                        <img src="{% static 'assets/imagenes/photo-1681415851723-dca11d0ec9a6.jpeg' %}" alt="" title="" data-slide-to="3" data-bs-slide-to="3">
                     </div>
                     
                 </div>
@@ -746,7 +753,7 @@
             <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
                 <div class="item-wrapper">
                     <div class="">
-                        <img src="./assets/photo-1579041925709-798d7d0fed1d.jpeg" alt="" title="" data-slide-to="4" data-bs-slide-to="4">
+                        <img src="{% static 'assets/imagenes/photo-1579041925709-798d7d0fed1d.jpeg' %}" alt="" title="" data-slide-to="4" data-bs-slide-to="4">
                     </div>
                     
                 </div>
@@ -754,7 +761,7 @@
             <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
                 <div class="item-wrapper">
                     <div class="">
-                        <img src="./assets/photo-1617727553252-65863c156eb0.jpeg" alt="" title="" data-slide-to="5" data-bs-slide-to="5">
+                        <img src="{% static 'assets/imagenes/photo-1617727553252-65863c156eb0.jpeg' %}" alt="" title="" data-slide-to="5" data-bs-slide-to="5">
                     </div>
                     
                 </div>
@@ -762,7 +769,7 @@
             <div class="item features-image col-12 col-md-6 col-sm-6 col-lg-2">
                 <div class="item-wrapper">
                     <div class="">
-                        <img src="./assets/photo-1554463529-e27854014799.jpeg" alt="" title="" data-slide-to="6" data-bs-slide-to="6">
+                        <img src="{% static 'assets/imagenes/photo-1554463529-e27854014799.jpeg' %}" alt="" title="" data-slide-to="6" data-bs-slide-to="6">
                     </div>
                     
                 </div>
@@ -914,7 +921,7 @@
         </div>
     </div>
 </section>
-<section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">‌</p></section><script src="./assets/bootstrap.bundle.min.js"></script>  <script src="./assets/smooth-scroll.js"></script>  <script src="./assets/index.js"></script>  <script src="./assets/navbar-dropdown.js"></script>  <script src="./assets/player.js"></script>  <script src="./assets/embla.min.js"></script>  <script src="./assets/script.js"></script>  <script src="./assets/script(1).js"></script>  <script src="./assets/formoid.min.js"></script>  
+<section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">‌</p></section><script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>  <script src="{% static 'assets/js/smooth-scroll.js' %}"></script>  <script src="{% static 'assets/js/index.js' %}"></script>  <script src="{% static 'assets/js/navbar-dropdown.js' %}"></script>  <script src="{% static 'assets/js/player.js' %}"></script>  <script src="{% static 'assets/js/embla.min.js' %}"></script>  <script src="{% static 'assets/js/script.js' %}"></script>  <script src="{% static 'assets/js/script(1).js' %}"></script>  <script src="{% static 'assets/js/formoid.min.js' %}"></script>  
   
   
 

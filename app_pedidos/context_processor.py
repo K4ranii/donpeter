@@ -1,3 +1,4 @@
+from .forms import PedidoForm
 def total_carrito(request):
     total = 0
     if request.user in request.session: 

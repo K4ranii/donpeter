@@ -1,20 +1,37 @@
+
+{% load static %}
 <html>
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="{% static 'assets/imagenes/logo_don_peter.png' %}" type="image/x-icon">
+    <meta name="description" content="Somos DonPeter, el mejor lugar para disfrutar completos. Realiza tus pedidos y evita las filas y tiempos de espera.">
+    
+    
+    <title>DonPeter</title>
+    <link rel="stylesheet" href="{% static 'assets/donpeter2.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+    <!-- Opcional: Enlace al archivo CSS de Bootstrap Grid -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-grid.min.css" rel="stylesheet">
+    
+    <!-- Opcional: Enlace al archivo CSS de Bootstrap Reboot -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-reboot.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style(1).css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css2' %}" as="style">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap"></noscript>
+    <link rel="stylesheet" href="{% static 'assets/css/mbr-additional.css' %}"><link rel="stylesheet" href="{% static 'assets/css/mbr-additional.css' %}" type="text/css">
+    
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+    
+    
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Ejemplos Webpay Plus - Crear Transacci&oacute;n</title>
   </head>
 
   <body class="container">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          <a href="#">Ejemplo Webpay Plus - Crear Transacci&oacute;n</a>
-        </li>
-        <li class="breadcrumb-item active" aria-current="page">
-          Step: <strong>Create Transaction</strong>
-        </li>
-      </ol>
-    </nav>
 
     <div class="alert alert-warning" role="alert">
       <h3>request</h3>
@@ -22,17 +39,17 @@
         {{ key }} = {{ value }},
       {% endfor %}
     </div>
-    <div class="alert alert-primary" role="alert">
-      <h3>result</h3>
+    <div class="alert" style="background-color: black; font-size: 70%;" role="alert">
+      <h3 style="font-size: 100%;">result</h3>
       {{ response }}
     </div>
-    <br />
-    <form action="{{ response.url }}" method="POST">
-      <input type="hidden" name="token_ws" value="{{ response.token }}" />
-      <input type="submit" value="Ejecutar Pago con Webpay" />
-    </form>
-    <br />
 
-    <a href="/">&laquo; volver a index</a>
+    <form action="{{ response.url }}" method="POST" target="_top">
+      <input type="hidden" name="token_ws" value="{{ response.token }}" />
+      <input type="submit" class="btn" style="background-color: rgb(103, 249, 103);" value="Ejecutar Pago con Webpay" />
+    </form>
+
+
+    <a href="{% url 'carrito' %}">&laquo; volver al carrito</a>
   </body>
 </html>

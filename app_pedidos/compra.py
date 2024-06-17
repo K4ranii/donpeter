@@ -52,3 +52,32 @@ class Carrito:
     def limpiar(self):
         self.session["carrito"]={}
         self.session.modified=True 
+
+
+class PedidoSesion:
+    def __init__(self, request):
+        self.request = request
+        self.session = request.session
+        detalles_pedido = self.session.get("detalles_pedido")
+        if not detalles_pedido:
+            detalles_pedido = self.session["detalles_pedido"] = {}
+        self.detalles_pedido = detalles_pedido
+
+    def guardar_detalles(self, nombre_cliente, telefono_cliente, detalles):
+        self.detalles_pedido = {
+            "nombre_cliente": nombre_cliente,
+            "telefono_cliente": telefono_cliente,
+            "detalles": detalles,
+        }
+        self.guardar_detalles_pedido()
+
+    def obtener_detalles(self):
+        return self.detalles_pedido
+
+    def limpiar_detalles(self):
+        self.session["detalles_pedido"] = {}
+        self.session.modified = True
+
+    def guardar_detalles_pedido(self):
+        self.session["detalles_pedido"] = self.detalles_pedido
+        self.session.modified = True

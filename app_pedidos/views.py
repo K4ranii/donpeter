@@ -1,24 +1,70 @@
 from app_pedidos.compra import Carrito
-from .models import Producto, Boleta, detalle_boleta
+from .models import Producto, Boleta, detalle_boleta,Pedido
+from django.urls import reverse
+from django.contrib import messages
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseBadRequest
+from django.http import HttpResponse, HttpResponseBadRequest,HttpResponseRedirect
 from transbank.error.transbank_error import TransbankError
 from transbank.webpay.webpay_plus.transaction import Transaction
+from .forms import PedidoForm
 import random
+from datetime import datetime
+
+def esta_abierto():
+    # Definir los horarios de atención por día de la semana
+    horarios = {
+        0: ('08:00', '18:00'),   # Lunes
+        1: ('08:30', '20:00'),   # Martes
+        2: ('07:00', '16:00'),   # Miércoles
+        3: ('09:00', '21:00'),   # Jueves
+        4: ('08:40', '18:30'),
+        # Puedes agregar los horarios del fin de semana si aplica
+    }
+
+    ahora = datetime.now()
+    dia_semana = ahora.weekday()  # Devuelve el día de la semana (0=Lunes, 1=Martes, ..., 6=Domingo)
+    
+    if dia_semana in horarios:
+        horario_inicio, horario_fin = horarios[dia_semana]
+        hora_actual = ahora.strftime('%H:%M')
+
+        if horario_inicio <= hora_actual <= horario_fin:
+            return True
+
+    return False
+
 
 def index(request):
     return render(request, 'index.html')
+
+def horario_diario(request):
+    return render(request, 'horario-diario.html')
 
 def pedidos(request):
     productos= Producto.objects.all()
 	
     return render(request, 'pedidos.html',context={'productos':productos})
 
-
 def carrito(request):
-    
-    return render(request, 'carrito.html')
+    pedido_form = PedidoForm()
 
+    if request.method == 'POST':
+        pedido_form = PedidoForm(request.POST)
+        if pedido_form.is_valid():
+            # Guardar datos del formulario en la sesión
+            request.session['pedido_form_data'] = pedido_form.cleaned_data
+
+            # Imprimir el contenido de la sesión en la consola de Django
+            print(request.session.items())
+
+    abierto = esta_abierto()
+
+    context = {
+        'pedido_form': pedido_form,
+        'abierto': abierto,
+    }
+
+    return render(request, 'carrito.html', context)
 
 
 def agregar_de_iframe(request, id):
@@ -91,17 +137,20 @@ def webpay_plus_commit(request):
 
         response = Transaction().commit(token=token)
         print("response: {}".format(response))
-        productos=[]
-        precio_total=0
+        productos = []
+        precio_total = 0
+
         if response['status'] == 'AUTHORIZED':
-            precio_total = 0
+            # Calcular el precio total del carrito
             for key, value in request.session['carrito'].items():
                 precio_total += int(value['precio']) * int(value['cantidad'])
 
+            # Crear una nueva instancia de Boleta y guardarla si el precio total es mayor que cero
             boleta = Boleta(total=precio_total)
-            if precio_total!=0:
+            if precio_total != 0:
                 boleta.save()
 
+            # Guardar detalles de la boleta en la base de datos
             productos = []
             for key, value in request.session['carrito'].items():
                 producto = Producto.objects.get(id_producto=value['producto_id'])
@@ -111,33 +160,40 @@ def webpay_plus_commit(request):
                 detalle.save()
                 productos.append(detalle)
 
+            # Guardar el ID de la boleta en la sesión
             request.session['boleta'] = boleta.id_boleta
+            print(request.session.items())
+            # Obtener los detalles del pedido de la sesión
+            detalles_pedido = request.session.get('pedido_form_data')
+            print("Detalles del pedido obtenidos:", detalles_pedido)
+            if detalles_pedido:
+                # Generar un ID único para el pedido
+                id_pedido = f'PED-{datetime.now().strftime("%m%d%H%M%S%f")}'
 
-            carrito = Carrito(request)
-            carrito.limpiar()
-        context = {'token': token, 'response': response, 'productos': productos, 'total': precio_total}
+                # Crear instancia de Pedido y guardar en la base de datos
+                nuevo_pedido = Pedido(
+                    id_pedido=id_pedido,
+                    nombre_cliente=detalles_pedido['nombre_cliente'],
+                    telefono_cliente=detalles_pedido['telefono_cliente'],
+                    detalles=detalles_pedido['detalles'],
+                    fecha=datetime.now(),
+                    estado='Pendiente',
+                    boleta=boleta
+                )
+                nuevo_pedido.save()
+
+                # Limpiar el carrito después de guardar la compra
+                carrito = Carrito(request)
+                carrito.limpiar()
+
+                # Limpiar los detalles del pedido de la sesión
+                del request.session['pedido_form_data']
+
+        context = {'token': token, 'response': response, 'productos': productos, 'total': precio_total, 'detalles' : detalles_pedido}
 
         return render(request, 'webpay/plus/commit.html', context)
-    elif request.method == 'POST':
-        token = request.POST.get("token_ws")
-        print("commit error for token_ws: {}".format(token))
-        response = {
-            "error": "Transacción con errores"
-        }
-
-        return render(request, 'webpay/plus/commit.html', {'token': token, 'response': response})
-    
-
-
-
-
-
-
-
-
-
-
-    ##Default Webpay:
+    else:
+        return HttpResponseBadRequest("Método no permitido")
 
 def webpay_plus_commit_error(request):
     return HttpResponse("Error en la transacción de pago")

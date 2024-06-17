@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="desktop mbr-site-loaded">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="{% static 'assets/imagenes/logo_don_peter.png' %}" type="image/x-icon">
+    <meta name="description" content="Somos DonPeter, el mejor lugar para disfrutar completos. Realiza tus pedidos y evita las filas y tiempos de espera.">
+    <title>DonPeter</title>
+    <link rel="stylesheet" href="{% static 'assets/donpeter2.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/app_pedidos/static/assets/css/horarios.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-reboot.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style(1).css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css2' %}" as="style">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap"></noscript>
+    <link rel="stylesheet" href="{% static 'assets/css/mbr-additional.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+    <style>
+        .mbr-background-video-preview {
+            display: block;
+            background-size: cover;
+            background-position: center center;
+            background-image: url('{% static "assets/imagenes/carga.gif" %}');
+        }
+        .mbr-video-foreground {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        #player {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            pointer-events: none;
+        }
+        @media only screen and (max-width: 767px) {
+            #player {
+                width: 140%;
+                left: -20%;
+            }
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-image: linear-gradient(to bottom right, #ff8000, #ff8000);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #schedule-display {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+
+<style>
+    /* Estilos opcionales para la tabla */
+    section {
+        text-align: center;
+        margin-top: 20px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 50%;
+        margin: 20px auto;
+    }
+    th, td {
+        border: 1px solid #f2f2f2b1;
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #f2f2f2b7;
+    }
+</style>
+
+</head>
+<body style="background-image: url(/app_pedidos/static/assets/imagenes/menu_images/foodBackground.jpg);">
+    <div class="container-banner container-banner-closing" id="donpeterBanner">
+        <div class="banner align-center">
+            <button type="button" onclick="document.getElementById(&#39;donpeterBanner&#39;).classList.add(&#39;container-banner-closing&#39;)" class="btn-close" aria-label="Close" style="position: fixed;top: 16px;right: 16px;"></button>
+            <div class="mbr-section-btn"></div>
+        </div>
+    </div>
+    <section data-bs-version="5.1" class="menu menu2 cid-uekBltbY7R" once="menu" id="menu-5-uekBltbY7R">
+        <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg opacityScroll">
+            <div class="container">
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a href="">
+                            <img src="{% static 'assets/imagenes/logo_don_peter.png' %}" alt="" style="height: 6.5rem;">
+                        </a>
+                    </span>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4" href="">Horario Laboral</a></span>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="collapse navbar-collapse opacityScroll" id="navbarSupportedContent">
+                    
+                    <div class="navbar-buttons mbr-section-btn">
+                        <a class="btn btn-primary display-4" href="{% url 'index' %}">Volver</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+    
+
+    <br><br><br><br><br><br>
+    <section id="tabla-section" style="background-color: rgb(248, 195, 98);">
+        <br>
+        <title> Consultar Horario laboral - semanal</title>
+        <button onclick="mostrarTabla()">Desplegar tabla</button>
+
+        
+        
+        <div id="tabla-container" style="display: none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dias de la semana</th>
+                        <th>Horario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lunes</td>
+                        <td>08:00hrs - 18:00hrs</td>
+                    </tr>
+                    <tr>
+                        <td>Martes</td>
+                        <td>08:30hrs - 20:00hrs</td>
+                    </tr>
+                    <tr>
+                        <td>Miercoles</td>
+                        <td>07:00hrs - 16:00hrs</td>
+                    </tr>
+                    <tr>
+                        <td>Jueves</td>
+                        <td>09:00hrs - 21:00hrs</td>
+                    </tr>
+                    <tr>
+                        <td>Viernes</td>
+                        <td>08:40hrs - 18:30hrs</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            function mostrarTabla() {
+                var tablaContainer = document.getElementById('tabla-container');
+                if (tablaContainer.style.display === 'none') {
+                    tablaContainer.style.display = 'block';
+                } else {
+                    tablaContainer.style.display = 'none';
+                }
+            }
+        </script>
+        <br><br>
+    </section>

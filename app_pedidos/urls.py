@@ -5,6 +5,7 @@ urlpatterns = [
     path('', index,name='index'),
     path('pedidos', pedidos,name='pedidos'),
     path('eliminar_producto/<producto_id>', eliminar_producto, name="eliminar"),
+    path('horario-diario', horario_diario, name='horario_diario'),
     path('agregar/<id>', agregar_producto, name="agregar"),
     path('agregar_ifrm/<id>', agregar_de_iframe, name="agregar_de_iframe"),
     path('restar/<id>', restar_producto, name="restar"),

@@ -10,6 +10,15 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.id_producto
+    
+class Boleta(models.Model):
+    id_boleta=models.AutoField(primary_key=True)
+    total=models.BigIntegerField()
+    fecha_compra=models.DateTimeField(blank=False, null=False, default = datetime.datetime.now)
+    
+    def __str__(self):
+        return str(self.id_boleta)
+
 
 class Pedido(models.Model):
     id_pedido = models.CharField(max_length=6, primary_key=True, verbose_name='Id de Pedido')
@@ -18,18 +27,10 @@ class Pedido(models.Model):
     fecha = models.DateTimeField(auto_now_add=True, verbose_name="Fecha Creacion")
     estado = models.CharField(max_length=20, default='Pendiente', verbose_name='Estado')
     detalles = models.TextField(blank=True, null=True, verbose_name="Detalles del Pedido")
+    boleta = models.OneToOneField(Boleta, on_delete=models.CASCADE, null=True, blank=True, verbose_name='Boleta Asociada')
 
     def __str__(self):
         return self.id_pedido
-
-
-class Boleta(models.Model):
-    id_boleta=models.AutoField(primary_key=True)
-    total=models.BigIntegerField()
-    fecha_compra=models.DateTimeField(blank=False, null=False, default = datetime.datetime.now)
-    
-    def __str__(self):
-        return str(self.id_boleta)
 
 class detalle_boleta(models.Model):
     id_boleta = models.ForeignKey('Boleta', blank=True, on_delete=models.CASCADE)

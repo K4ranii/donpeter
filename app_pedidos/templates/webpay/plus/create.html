@@ -26,27 +26,22 @@
     
     <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
     
-    
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Ejemplos Webpay Plus - Crear Transacci&oacute;n</title>
   </head>
 
   <body class="container">
 
-    <div class="alert alert-warning" role="alert">
-      <h3>request</h3>
-      {% for key, value in request.GET.items %}
-        {{ key }} = {{ value }},
-      {% endfor %}
-    </div>
-    <div class="alert" style="background-color: black; font-size: 70%;" role="alert">
-      <h3 style="font-size: 100%;">result</h3>
-      {{ response }}
-    </div>
-
     <form action="{{ response.url }}" method="POST" target="_top">
       <input type="hidden" name="token_ws" value="{{ response.token }}" />
-      <input type="submit" class="btn" style="background-color: rgb(103, 249, 103);" value="Ejecutar Pago con Webpay" />
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p style="text-align: center;">Reclama tu pedido mostrando tu boleta al pagar, te recomendamos agregar comentarios en el formulario de tu pedido 😉</p>
+      <input type="submit" class="btn" style="background-color: rgb(103, 249, 103); display: block; margin: 0 auto;" value="Pagar" />
+
     </form>
 
 

@@ -6,8 +6,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseBadRequest,HttpResponseRedirect
 from transbank.error.transbank_error import TransbankError
 from transbank.webpay.webpay_plus.transaction import Transaction
-from .forms import PedidoForm
+from .forms import PedidoForm,RegistroUserForm
 import random
+from django.contrib.auth import login
 from datetime import datetime
 
 def esta_abierto():
@@ -31,7 +32,21 @@ def esta_abierto():
         if horario_inicio <= hora_actual <= horario_fin:
             return True
 
-    return False
+    return False 
+
+def login_view(request):
+    return render(request, 'login.html')
+
+def registro(request):
+    if request.method == 'POST':
+        form = RegistroUserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)  # Opcional: Inicia sesión automáticamente después del registro
+            return redirect('index')  # Redirige a una página de éxito
+    else:
+        form = RegistroUserForm()
+    return render(request, 'registro.html', {'form': form})
 
 
 def index(request):
@@ -95,9 +110,27 @@ def restar_producto(request, id):
 def limpiar_carrito(request):
     carrito_compra= Carrito(request)
     carrito_compra.limpiar()
-    return redirect('carrito')    
+    return redirect('carrito')  
+  
+def lista_pedidos(request):
+    pedidos = Pedido.objects.all()
+    return render(request, 'lista_pedidos.html', context={'pedidos':pedidos})
 
 
+def guardar_y_redirigir(request):
+    if request.method == 'POST':
+        form = PedidoForm(request.POST)
+        if form.is_valid():
+            # Guarda los datos en la sesión en lugar de la base de datos
+            request.session['pedido'] = {
+                'nombre_cliente': form.cleaned_data.get('nombre_cliente', 'Nulo'),
+                'telefono_cliente': form.cleaned_data.get('telefono_cliente', 'Nulo'),
+                'detalles': form.cleaned_data.get('detalles', 'Nulo'),
+            }
+            # Redirige a la vista de procesar pago
+            return redirect('procesar_pago')
+    else:
+        return redirect('carrito') 
 
 def procesar_pago(request):
     if request.method == 'GET':

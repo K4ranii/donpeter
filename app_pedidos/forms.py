@@ -1,5 +1,12 @@
 from django import forms
 from .models import Producto, Pedido
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
+class RegistroUserForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = [ 'username', 'email', 'password1', 'password2']
 
 class ProductoForm(forms.ModelForm):
     id_producto = forms.CharField(label='Id de Producto', widget=forms.TextInput(attrs={'readonly': 'readonly', 'class': 'form-control'}))

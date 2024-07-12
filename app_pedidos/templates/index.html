@@ -70,6 +70,18 @@
                     <li class="nav-item">
 						<a class="nav-link link text-black display-4" href="{% url 'horario_diario' %}">Horario laboral</a>
 					</li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+						<a class="nav-link link text-black display-4" href="{% url 'logout' %}">Logout</a>
+					</li>
+                    {% else %}
+                    <li class="nav-item">
+						<a class="nav-link link text-black display-4" href="{% url 'login' %}">Login</a>
+					</li>
+                    {% endif %}
+                    <li class="nav-item">
+						<a class="nav-link link text-black display-4" href="{% url 'registro' %}">Registro</a>
+					</li>
 					
 					</ul>
 				

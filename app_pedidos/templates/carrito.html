@@ -54,14 +54,37 @@
         }
 
         .carrito-container .botones-cantidad .btn {
+            display: inline-block;
+            width: 20px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 16px;
             margin-left: 0;
             margin-top: 5px;
+            border-radius: 5px;
         }
 
         @media (max-width: 768px) {
+            .carrito-container {
+                max-width: 100%; /* Ajusta el ancho del contenedor en móviles */
+                padding: 10px; /* Reduce el padding en móviles */
+            }
+
+            .carrito-container table {
+                font-size: 14px; /* Reduce el tamaño de fuente en móviles */
+            }
+
             .carrito-container .boton-limpiar,
             .carrito-container .boton-comprar {
                 padding: 5px 10px;
+            }
+
+            .carrito-container .botones-cantidad .btn {
+                width: 30px; /* Ajusta el ancho del botón en móviles */
+                height: 30px; /* Ajusta la altura del botón en móviles */
+                line-height: 30px; /* Ajusta el line-height del botón en móviles */
+                font-size: 14px; /* Ajusta el tamaño del texto en móviles */
             }
         }
     </style>
@@ -115,7 +138,7 @@
                     <a href="{% url 'limpiar' %}" class="btn btn-outline-danger btn-sm boton-limpiar">Limpiar Carrito</a>
                 </div> 
                 <div class="col-6">
-                    <a href="{% url 'procesar_pago' %}" class="btn btn-outline-primary btn-sm boton-comprar">Comprar</a>
+                    <a href="{% url 'procesar_pago' %}" class="btn btn-outline-primary btn-sm boton-comprar" id="boton-comprar">Comprar</a>
                 </div>
             </div>
         </div>
@@ -123,7 +146,7 @@
         <div class="container mt-4">
             <h2>Formulario de Pedido</h2>
 
-            <form method="POST">
+            <form id="pedido-form" method="POST" action="{% url 'guardar_y_redirigir' %}">
                 {% csrf_token %}
                 <div class="mb-3">
                     {{ pedido_form.nombre_cliente.label_tag }}
@@ -176,7 +199,27 @@
 
     <!-- Scripts personalizados si es necesario -->
     <script>
-        // Scripts personalizados aquí si es necesario
+
+    document.getElementById('boton-comprar').addEventListener('click', function() {
+            var form = document.getElementById('pedido-form');
+            var nombre = form.querySelector('input[name="nombre_cliente"]');
+            var telefono = form.querySelector('input[name="telefono_cliente"]');
+            var detalles = form.querySelector('textarea[name="detalles"]');
+
+            // Asignar valor por defecto "Nulo" si los campos están vacíos
+            if (!nombre.value.trim()) {
+                nombre.value = 'Nulo';
+            }
+            if (!telefono.value.trim()) {
+                telefono.value = 'Nulo';
+            }
+            if (!detalles.value.trim()) {
+                detalles.value = 'Nulo';
+            }
+
+            // Enviar el formulario
+            form.submit();
+        });
     </script>
 </body>
 </html>

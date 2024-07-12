@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DonPeter - Haz tu Pedido</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/menu_styles/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/menu_styles/style.css' %}">
+    
+    
+    
+</head>
+<body>
+    <header class="navbar-area navbar-area-fixed">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container nav-container">
+                <div class="collapse navbar-collapse" id="themefie_main_menu">
+                    <ul class="navbar-nav menu-open">
+                        <li><a href="{% url 'index' %}">INICIO</a></li>
+                        <li><a href="">ACERCA DE</a></li>
+                    </ul>
+                </div>
+                <div class="nav-right-part nav-right-part-desktop">                    
+                    <ul>
+                        <li class="phone-contact"><i class="ri-phone-fill float-start"></i>+569 61531122</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .table-container {
+            margin: 20px auto; /* Centra el contenedor */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 90%; /* Aumenta el ancho del contenedor */
+            max-width: 1000px; /* Ancho máximo */
+            padding: 20px; /* Agrega espaciado interno */
+            overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+        }
+        table {
+            width: 100%; /* Ocupa todo el ancho del contenedor */
+            border-collapse: collapse; /* Bordes combinados */
+        }
+        th, td {
+            padding: 16px; /* Aumenta el espaciado interno */
+            text-align: left; /* Alineación del texto */
+            border-bottom: 1px solid #ddd; /* Línea inferior */
+            font-size: 1.1em; /* Aumenta el tamaño de la fuente */
+        }
+        th {
+            background-color: #f4f4f4; /* Color de fondo para el encabezado */
+        }
+        tr:hover {
+            background-color: #f5f5f5; /* Color de fondo al pasar el mouse */
+        }
+    </style>
+
+    <section class="breadcrumb-area">
+        
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 align-self-center">
+                    <div class="banner-inner text-center">
+                        <h3>Pedidos en Proceso</h3>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID pedido</th>
+                                        <th>Nombre cliente</th>
+                                        <th>Número</th>
+                                        <th>Estado</th>
+                                        <th>Detalle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for pedido in pedidos %}
+                                    <tr>
+                                        <td>{{ pedido.id_pedido }}</td>
+                                        <td>{{ pedido.nombre_cliente }}</td>
+                                        <td>{{ pedido.telefono_cliente }}</td>
+                                        <td>{{ pedido.estado }}</td>
+                                        <td>{{ pedido.detalles }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-area">
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-md-start text-center">
+                        <div class="copyright-area">
+                            <p>© 2024 DonPeter´s. Todos los derechos reservados</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="social-area text-md-end text-center mt-md-0 mt-2">
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'assets/js/menu_scripts/jquery.3.6.min.js' %}"></script>
+    <script src="{% static 'assets/js/menu_scripts/bootstrap.min.js' %}"></script>
+
+      <!-- all plugins here -->
+      <script src="{% static 'assets/js/menu_scripts/jquery.3.6.min.js' %}"></script>
+      <script src="{% static 'assets/js/menu_scripts/jquery-ui.min.js' %}"></script>
+      <script src="{% static 'assets/js/menu_scripts/bootstrap.min.js' %}"></script>
+      <script src="{% static 'assets/js/menu_scripts/imageloded.min.js' %}"></script>
+      <script src="{% static 'assets/js/menu_scripts/counterup.js' %}"></script>
+      <script src="{% static 'assets/js/menu_scripts/waypoint.js' %}"></script>
+      <script src="{% static 'assets/js/menu_scripts/magnific.min.js' %}"></script>
+      <script src="{% static 'assets/js/menu_scripts/isotope.pkgd.min.js' %}"></script>
+      <script src="{% static 'assets/js/menu_scripts/nice-select.min.js' %}"></script>
+      <script src="{% static 'assets/js/menu_scripts/fontawesome.min.js' %}"></script>
+      <script src="{% static 'assets/js/menu_scripts/owl.min.js' %}"></script>
+      <script src="{% static 'assets/js/menu_scripts/slick-slider.min.js' %}"></script>
+      <script src="{% static 'assets/js/menu_scripts/wow.min.js' %}"></script>
+      <script src="{% static 'assets/js/menu_scripts/tweenmax.min.js' %}"></script>
+      <!-- main js  -->
+      <script src="{% static 'assets/js/menu_scripts/main.js' %}"></script>
+</body>
+</html>

@@ -121,8 +121,10 @@
                         <li></li>
                         <li></li>
                         <li><a href="{% url 'index' %}">INICIO</a></li>
-                        <li><a href="">ACERCA DE</a></li>
-                        <li><a href="">CONTACTANOS</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="{% url 'lista_pedidos'%}">Lista de pedidos</a>
+                        </li>
+                        
                     </ul>
                 </div>
                 <div class="logo">
@@ -131,9 +133,8 @@
                 <div class="nav-right-part nav-right-part-mobile">
                     <ul>
                         <li><a class="search" href=""><i class="ri-search-line"></i></a></li>
-                        <li class="phone-contact d-md-block d-none"><i class="ri-phone-fill float-start"></i>+997 509 153 849</li>
-                        <li class="menu-cart" onclick="mostrarCarrito('mobile')">CARRO <span id="numero-productos-mobile">1</span></li>
-                        <li id="total-carrito-mobile">0 $</li>
+                        <li class="phone-contact d-md-block d-none"><i class="ri-phone-fill float-start"></i>+569 61531122</li>
+                        <li class="menu-cart" onclick="mostrarCarrito('mobile')">CARRO</li>
                     </ul>
                     <!-- Contenedor para el carrito móvil -->
                     <div id="carrito-container-mobile">
@@ -143,9 +144,9 @@
                 <div class="nav-right-part nav-right-part-desktop">                    
                     <ul>
                         <li><a class="search" href=""><i class="ri-search-line "></i></a></li>
-                        <li class="phone-contact"><i class="ri-phone-fill float-start"></i>+997 509 153 849</li>
-                        <li class="menu-cart" onclick="mostrarCarrito('desktop')">CARRO <span id="numero-productos-desktop">1</span></li>
-                        <li id="total-carrito-desktop">0 $</li>
+                        <li class="phone-contact"><i class="ri-phone-fill float-start"></i>+569 61531122</li>
+                        <li class="menu-cart" onclick="mostrarCarrito('desktop')">CARRO </li>
+                        
                     </ul>
                     <!-- Contenedor para el carrito de escritorio -->
                     <div id="carrito-container-desktop">
@@ -170,7 +171,8 @@
                     <div class="banner-inner text-center">
                         <h3>Arma tu pedido
                         </h3>
-                        <h1>Menu DonPeter
+                        <br>
+                        <h1>Menú DonPeter
                         </h1>
                         <nav aria-label="breadcrumb">
                             <ul class="breadcrumb">
@@ -218,14 +220,14 @@
                     <div class="single-item-wrap style-2">
                         <div class="media">
                             <div class="thumb">
-                                <img src="{% static 'assets/imagenes/menu_images/1.png' %}" alt="img">
+                                <img src="{% static 'assets/imagenes/menu_images/2.png' %}" alt="img">
                             </div>
                             <div class="wrap-details">
                                 <h5><a href="">All Season Gulliver Pizza</a></h5>
                                 <p>Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened.</p>
                                 <div class="wrap-footer">
-                                    <h6 class="price">$17.00</h6>
-                                    <button href="{% url 'agregar' 2 %}" type="submit" class="btn btn-secondary">Añadir al Carro</button>
+                                    <h6 class="price">$1000</h6>
+                                    <a href="{% url 'agregar' 2 %}" type="submit" class="btn btn-secondary">Añadir al Carro</a>
                                 </div>                            
                             </div>
                         </div>
@@ -235,14 +237,14 @@
                     <div class="single-item-wrap style-2">
                         <div class="media">
                             <div class="thumb">
-                                <img src="{% static 'assets/imagenes/menu_images/1.png' %}" alt="img">
+                                <img src="{% static 'assets/imagenes/menu_images/3.png' %}" alt="img">
                             </div>
                             <div class="wrap-details">
                                 <h5><a href="">All Season Gulliver Pizza</a></h5>
                                 <p>Pizza is a savory dish of Italian origin consisting of a usually round, flattened base of leavened.</p>
                                 <div class="wrap-footer">
-                                    <h6 class="price">$17.00</h6>
-                                    <button href="{% url 'agregar' 3 %}" type="submit" class="btn btn-secondary">Añadir al Carro</button>
+                                    <h6 class="price">$1500</h6>
+                                    <a href="{% url 'agregar' 3 %}" type="submit" class="btn btn-secondary">Añadir al Carro</a>
                                 </div>                            
                             </div>
                         </div>

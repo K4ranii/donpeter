@@ -8,7 +8,8 @@ from transbank.error.transbank_error import TransbankError
 from transbank.webpay.webpay_plus.transaction import Transaction
 from .forms import PedidoForm,RegistroUserForm
 import random
-from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login,logout
 from datetime import datetime
 
 def esta_abierto():
@@ -36,6 +37,8 @@ def esta_abierto():
 
 def login_view(request):
     return render(request, 'login.html')
+
+
 
 def registro(request):
     if request.method == 'POST':
@@ -276,3 +279,8 @@ def webpay_plus_create(request):
         response = Transaction().create(buy_order, session_id, amount, return_url)
 
         return render(request, 'webpay/plus/create.html', {'request': create_request, 'response': response})
+
+@login_required
+def user_logout(request):
+    logout(request)  # Cierra la sesión del usuario
+    return redirect('index') 

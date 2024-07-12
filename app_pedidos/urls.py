@@ -23,6 +23,6 @@ urlpatterns = [
     path('webpay-plus/status', status, name='webpay_plus_status'),
     path('procesar_pago/', procesar_pago,name="procesar_pago"),
     path('guardar_y_redirigir/', guardar_y_redirigir, name='guardar_y_redirigir'),
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('logout/', user_logout, name='logout'),
 
      ]
